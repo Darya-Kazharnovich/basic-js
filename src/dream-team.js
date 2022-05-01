@@ -14,15 +14,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(members) {
-  let result = ''
-  if (Array.isArray(members)) {
-    for (i=0; i<members.length; i++) {
-      if (typeof members[i] === 'string') {
-        let string = members[i].trim()
-        let firstUpper = string[0].toUpperCase()
-        result = result + firstUpper
+  let result = ''   // пустой результат
+  if (Array.isArray(members)) { // если входящее значение - массив
+    for (i=0; i<members.length; i++) { // для каждого элемента массива
+      if (typeof members[i] === 'string') { // который по типу строка
+        let string = members[i].trim() // убираем пробелы
+        let firstUpper = string[0].toUpperCase() // делаем заглавной буквой первую букву
+        result = result + firstUpper // прибавляем к результату ее
       }
-    } return result.split('').sort().join('')
+    } return result.split('').sort().join('') // делим значение на буквы, сорттирует алфавитом, делаем строкой
   } return false
 }
 

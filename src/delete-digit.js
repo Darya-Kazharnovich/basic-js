@@ -12,12 +12,12 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function deleteDigit(n) {
-  let arr = []
-  let nString = n.toString()
-  for (i=0; i<nString.length; i++) {
-   let newPart = nString.replace(nString[i], '')
-   arr.push(newPart)
-  } return Math.max.apply(null, arr)
+  let arr = []  //задаем массив
+  let nString = n.toString() // преобразуем число в строку
+  for (i=0; i<nString.length; i++) { // для каждого элемента строки 
+   let newPart = nString.replace(nString[i], '') // удаляем элемент
+   arr.push(newPart) // пушим в массив
+  } return Math.max.apply(null, arr) // находим наибольшее значение в массиве
 }
 
 module.exports = {
