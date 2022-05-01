@@ -25,7 +25,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getDNSStats(domains) {
   let domainsObject = {}
   for (i=0; i<domains.length; i++) {
-    let 
+    let domainsSplit = domains[i].split('.')
+    
   }
 }
 
