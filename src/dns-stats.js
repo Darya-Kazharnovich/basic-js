@@ -28,8 +28,12 @@ function getDNSStats(domains) {
     let separate = element.split('.'); // разделим на части по точкам
     let key = ''; // создадим пустой ключ
     for (let i = separate.length - 1; i > -1; i--) {
-      key = key + `.${separate[i]}`; // задаем название ключа
-      DNS[key] ? ++DNS[key] : DNS[key] = 1; 
+      key = key + `.${separate[i]}` // задаем название ключа
+      if (DNS[key]) {
+        DNS[key] = DNS[key] + 1 // если есть ключ, то добавим 1
+      } else {
+        DNS[key] = 1 // если нет ключа, то 1
+      }
     }
   });
   return DNS
