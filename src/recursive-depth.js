@@ -13,10 +13,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class DepthCalculator {
-  calculateDepth(/* arr */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
-  }
+  calculateDepth(arr) {
+    let result // задаем результат
+    if (arr.some(Element => Array.isArray(Element)) === true) { // при проверке каждого элемента, если хоть один элемент массива массив
+      result = this.calculateDepth(arr.flat()) + 1 // на элемент вызываем функцию,поднимаем и увеличиваем результат
+    } else if (arr.some(Element => Array.isArray(Element)) === false) { // если нет массивов 
+      result = 1 // результат единица
+    }
+    return result
+  } 
 }
 
 module.exports = {
