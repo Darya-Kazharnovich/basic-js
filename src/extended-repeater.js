@@ -20,10 +20,10 @@ function repeater(str, options) {
     repeatTimes = 1, // устанавливает число повторений
     separator = '+', //строка, разделяющая повторения
     addition = '', // строка, которая будет добавлена после каждого повторения
-    additionRepeatTimes = 1, // число повторений
+    additionRepeatTimes = 1, // число повторений addition
     additionSeparator = '|', // строка, разделяющая повторения
   } = options
-  let repeat = []
+  let repeat = [] // массив для наполнения
   for (let i = 0; i < repeatTimes; i++) {
     let repeatArray = []
     if (additionRepeatTimes === undefined) {
