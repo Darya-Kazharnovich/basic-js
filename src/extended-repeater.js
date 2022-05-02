@@ -22,26 +22,21 @@ function repeater(str, options) {
     addition = '', // строка, которая будет добавлена после каждого повторения
     additionRepeatTimes = 1, // число повторений
     additionSeparator = '|', // строка, разделяющая повторения
-  } = options;
-  const arr = [];
-  let arr2 = [];
+  } = options
+  let repeat = []
   for (let i = 0; i < repeatTimes; i++) {
-    arr2 = [];
+    let repeatArray = []
     if (additionRepeatTimes === undefined) {
-      arr.push(str);
+      repeat.push(str)
     } else {
-      for (let k = 0; k < additionRepeatTimes; k++) {
-        if (addition === null) {
-          arr2.push(addition + '');
-        } else {
-          arr2.push(addition);
-        }
+      for (let n = 0; n < additionRepeatTimes; n++) {
+        addition === null? repeatArray.push(addition + '') : repeatArray.push(addition)
       }
-      const arrStr = arr2.join(`${additionSeparator}`);
-      arr.push(str + arrStr);
+      const arrJoin = repeatArray.join(`${additionSeparator}`)
+      repeat.push(str + arrJoin)
     }
   }
-  return arr.join(`${separator}`);
+  return repeat.join(`${separator}`)
 }
 
 module.exports = {

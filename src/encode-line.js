@@ -11,7 +11,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  let arr = [] //пустой массив строка
+  let arr = [] //пустой массив для строки
   let result = 1 // начинаем с 1, потому что не может быть нулевым присутствие буквы
   for (let i = 0; i < str.length; i++) { //для каждого элемента
     if (str[i] === str[i + 1]) { //если этот элемент равен следующему
